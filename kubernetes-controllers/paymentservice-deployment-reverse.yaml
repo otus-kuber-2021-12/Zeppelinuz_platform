@@ -11,8 +11,8 @@ spec:
       app: paymentservice
   strategy:
     rollingUpdate:
-      maxSurge: 35%
-      maxUnavailable: 35%
+      maxSurge: 0
+      maxUnavailable: 1
   template:
     metadata:
       labels:
