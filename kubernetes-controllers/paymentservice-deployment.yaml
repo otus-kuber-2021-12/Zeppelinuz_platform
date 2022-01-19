@@ -15,7 +15,7 @@ spec:
         app: paymentservice
     spec:
       containers:
-      - image: dem0niuz/paymentservice:v0.0.2
+      - image: dem0niuz/paymentservice:v0.0.1
         name: paymentservice
         ports:
         - containerPort: 50051
