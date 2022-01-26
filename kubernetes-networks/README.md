@@ -496,8 +496,10 @@ web    <none>   *                 80      42m
 
 +++++++++++++++++++++++++++++++
 
-После [этой]https://kubernetes.github.io/ingress-nginx/user-guide/default-backend/ и [этой](https://kubernetes.github.io/ingress-nginx/examples/rewrite/) подсказок
+После [этой](https://kubernetes.github.io/ingress-nginx/user-guide/default-backend/) и [этой](https://kubernetes.github.io/ingress-nginx/examples/rewrite/) подсказок
+
 Спасибо Олегу Константинову!
+
 всё завелось после модернизации манифеста web-ingress.yaml
 ```
 $ curl http://172.17.255.2/web/index.html | grep KUBER
