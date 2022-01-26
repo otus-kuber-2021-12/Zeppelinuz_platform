@@ -494,6 +494,26 @@ web    <none>   *                 80      42m
 ```
 **куда копать, где я адрес пропустил ?**
 
-** без звёздочек пока что
++++++++++++++++++++++++++++++++
+
+После [этой]https://kubernetes.github.io/ingress-nginx/user-guide/default-backend/ и [этой](https://kubernetes.github.io/ingress-nginx/examples/rewrite/) подсказок
+Спасибо Олегу Константинову!
+всё завелось после модернизации манифеста web-ingress.yaml
+```
+$ curl http://172.17.255.2/web/index.html | grep KUBER
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100 83864  100 83864    0     0  79.9M      0 --:--:-- --:--:-- --:--:-- 79.9M
+export KUBERNETES_PORT='tcp://10.96.0.1:443'
+export KUBERNETES_PORT_443_TCP='tcp://10.96.0.1:443'
+export KUBERNETES_PORT_443_TCP_ADDR='10.96.0.1'
+export KUBERNETES_PORT_443_TCP_PORT='443'
+export KUBERNETES_PORT_443_TCP_PROTO='tcp'
+export KUBERNETES_SERVICE_HOST='10.96.0.1'
+export KUBERNETES_SERVICE_PORT='443'
+export KUBERNETES_SERVICE_PORT_HTTPS='443'
+```
+
+** без звёздочек
 
 
