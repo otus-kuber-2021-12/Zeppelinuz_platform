@@ -1,0 +1,16 @@
+notary:
+  enabled: false
+expose:
+  type: ingress
+  tls:
+    enables: true
+    secretName: harbor.34.116.149.237.nip.io
+##    notarySecretName: notary.34.116.149.237.nip.io
+  ingress:
+    hosts:
+      core: harbor.34.116.149.237.nip.io
+    annotations:
+      kubernetes.io/ingress.class: "nginx"
+      cert-manager.io/cluster-issuer: "letsencrypt-production"
+#notary:
+#  enabled: false
