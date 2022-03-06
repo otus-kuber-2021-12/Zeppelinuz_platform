@@ -1,0 +1,25 @@
+apiVersion: flagger.app/v1beta1
+kind: Canary
+metadata:
+  name: frontend
+  namespace: microservices-demo
+spec:
+  provider: istio
+  targetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: frontend
+  service:
+    port: 80
+    targetPort: 8080
+    gateways:
+    - frontend-gateway
+    hosts:
+    - "*"
+    trafficPolicy:
+      tls:
+        mode: DISABLE
+  analysis:
+    interval: 30s
+    threshold: 99
+    iterations: 100

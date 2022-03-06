@@ -1,0 +1,8 @@
+image:
+  repository: dem0niuz/cartservice
+  tag: latest
+
+redis:
+  cluster:
+    enabled: false
+  usePassword: false

@@ -1,0 +1,21 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: checkoutservice
+  namespace: microservices-demo
+  annotations:
+    fluxcd.io/ignore: "false"
+    fluxcd.io/automated: "true" # автоматически обновляет если докер-имидж обновился в реестре
+    flux.weave.works/tag.chart-image: semver:~v0.0 # обновляются только такие версии
+spec:
+  releaseName: checkoutservice
+  helmVersion: v3
+  chart: # какой helm-чарт развоваричает
+    git: git@gitlab.com:otushwo/microservices-demo.git
+    ref: master
+    path: deploy/charts/checkoutservice
+  values:
+    image:
+      repository: dem0niuz/checkoutservice
+      tag: v0.0.5
