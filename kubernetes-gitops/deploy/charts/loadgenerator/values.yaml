@@ -1,0 +1,5 @@
+image:
+  repository: dem0niuz/loadgenerator
+  tag: latest
+ingress:
+  host: frontend.34.132.199.96.nip.io

@@ -1,0 +1,6 @@
+image:
+  repository: dem0niuz/frontend
+  tag: v0.0.5
+ingress:
+  host: frontend.34.132.199.96.nip.io
+#environment: develop
