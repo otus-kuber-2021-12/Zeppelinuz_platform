@@ -1,0 +1,15 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: storage-pod
+spec:
+  containers:
+    - name: local-google
+      image: busybox
+      volumeMounts:
+      - mountPath: "/data"
+        name: csi-hw-volume
+  volumes:
+    - name: csi-hw-volume
+      persistentVolumeClaim:
+        claimName: storage-pvc
