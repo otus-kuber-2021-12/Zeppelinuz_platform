@@ -1,0 +1,31 @@
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+# One control plane node and three "workers".
+#
+# While these will not add more real compute capacity and
+# have limited isolation, this can be useful for testing
+# rolling updates etc.
+#
+# The API-server and other control plane components will be
+# on the control-plane node.
+#
+# You probably don't need this unless you are testing Kubernetes itself.
+nodes:
+- role: control-plane
+#  extraMounts:
+#  - hostPath: /data/
+#    containerPath: /data
+#    # optional: if set, the mount is read-only.
+#    # default false
+#    readOnly: false
+#    # optional: if set, the mount needs SELinux relabeling.
+#    # default false
+#    selinuxRelabel: false
+#    # optional: set propagation mode (None, HostToContainer or Bidirectional)
+#    # see https://kubernetes.io/docs/concepts/storage/volumes/#mount-propagation
+#    # default None
+#    propagation: HostToContainer
+#- role: worker
+#  image: kindest/node:v1.21.10@sha256:84709f09756ba4f863769bdcabe5edafc2ada72d3c8c44d6515fc581b66b029c
+#- role: worker
+#- role: worker
